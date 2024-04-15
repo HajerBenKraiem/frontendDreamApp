@@ -7,6 +7,7 @@ import Create from './components/create/Create';
 import Login from './components/login/Login';
 import Signup from './components/signup/Signup';
 import Type from './components/type/Type';
+//import Types from'./components/types';
 import TypesDetail from './components/typesDetail/TypesDetail';
 
 function App() {
