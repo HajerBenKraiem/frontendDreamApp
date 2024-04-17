@@ -42,7 +42,8 @@ const Login = () => {
     <div className={classes.loginContainer}>
      <div className={classes.loginWrapper}>
        <div className={classes.loginLeftSide}>
-         <img src={img} className={classes.leftImg}/>
+       
+         <img src={img} alt="login form" className={classes.leftImg}/>
        </div>
        <div className={classes.loginRightSide}>
          <h2 className={classes.title}>Login</h2>
@@ -57,7 +58,7 @@ const Login = () => {
          </form>
          {error && 
            <div className={classes.errorMessage}>
-                Wrong credentials! Try different ones.
+                Wrong credentials! Try different ones.....
             </div>
             }
        </div>

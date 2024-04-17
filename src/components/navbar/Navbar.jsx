@@ -1,12 +1,26 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 
 import classes from'./navbar.module.css'
+
+import{useDispatch, useSelector} from'react-redux'
+import { logout } from '../../redux/authSlice'
 const Navbar = () => {
     const [isScrolled,setIsScrolled] = useState(false)
+
+    const {user} =useSelector((state)=>state.auth)
+     const dispatch = useDispatch()
+     const navigate = useNavigate()
+
+  
     window.onscroll =()=>{
         setIsScrolled(window.pageYOffset === 0 ? false : true)
         return() =>(window.onscroll=null)
+    }
+
+    const handleLogout = () =>{
+      dispatch(logout())
+      navigate('/login')
     }
   return (
     <div className={`${classes.container} ${isScrolled ? classes.scrolled : ''}`}>
@@ -27,8 +41,17 @@ const Navbar = () => {
           </ul>
         </div>
         <div className={classes.right}>
-        <Link to='/login' className={classes.login}>Login</Link>
-              <Link to='/signup' className={classes.signup}>Sign up</Link>
+          {user 
+          ? 
+          (<> <Link to='/create'>Create</Link>
+          <p className={classes.username}>{user.username}</p>
+          <span className={classes.logout} onClick={handleLogout}>Logout</span>
+          
+          </>)
+          :
+          (<><Link to='/login' className={classes.login}>Login</Link>
+              <Link to='/signup' className={classes.signup}>Sign up</Link></>)}
+        
         </div>
 
         </div>

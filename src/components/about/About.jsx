@@ -46,12 +46,12 @@ const About = () => {
     </div>
     <div className={classes.inputContainer}>
       <span> Check In Date <BiHappy className={classes.icon}/></span>
-      <input type ="text" placeholder='Type date...' onChange={(e)=>setStartDate(e.target.value)} ></input>
+      <input type ="date" placeholder='enter date...' onChange={(e)=>setStartDate(e.target.value)} ></input>
     </div>
 
     <div className={classes.inputContainer}>
     <span> Check Out Date  <FaUmbrellaBeach className={classes.icon}/></span>
-    <input type ="text" placeholder='Type date...' onChange={(e)=>setEndDate(e.target.value)} ></input>
+    <input type ="date" placeholder='enter date...' onChange={(e)=>setEndDate(e.target.value)} ></input>
     </div>
 
     <button onClick={handleSearch} className={classes.bookBtn}> Search</button>

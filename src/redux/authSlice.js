@@ -6,15 +6,15 @@ const initialState = {
 };
 
 export const authSlice = createSlice({
-    name: 'auth', // Correction de la faute de frappe ici
+    name: 'auth', // 
     initialState: initialState,
     reducers: {
         login(state, action) {
-            state.user = action.payload.others; // Correction de la faute de frappe ici
+            state.user = action.payload.others; // 
             state.token = action.payload.token;
         },
         register(state, action) {
-            state.user = action.payload.others; // Correction de la faute de frappe ici
+            state.user = action.payload.others; // 
             state.token = action.payload.token;
         },
         logout(state) {
